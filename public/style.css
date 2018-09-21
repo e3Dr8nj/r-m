@@ -1,0 +1,134 @@
+/* styles */
+/* called by your view template */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+   background-color: #2c2f33;
+/*background-image:url("https://livewallpaperhd.com/wp-content/uploads/2017/08/Anime-Re-Zero-Wallpaper-Emilia.jpg");
+ */ 
+                 
+   background-repeat: no-repeat;
+ background-position: left top;
+    background-attachment: fixed;
+   color:#b9bbbe;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+p {
+  max-width: 600px;
+}
+
+form {
+ 
+  padding: 15px;
+  
+  display: inline;
+  
+  max-width: 340px;
+  border-radius: 3px;
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid lightgrey;
+}
+textarea{
+   font-size: 1.1em;
+  background-color: #23272a;
+  color:#f6f6f7;
+  border-color:#040405;
+  opacity: 0.9;
+ 
+  
+}
+textarea:hover{
+  opacity:1.0;
+ 
+}
+
+.top_menu{
+ 
+    position: fixed;
+  
+  top:0;
+  width:100%;
+  
+ z-index:1;
+  background-color:	#0b0e0f;
+  color:#ffffff;
+  
+  
+}
+div{border-top:2px black;}
+.inv{display:none}
+.inv2{display:none}
+.bl{
+display:block;
+}
+.inl{
+  display:inline-block;
+}
+.b_inl{display:inline}
+.a_inl{display:inline}
+.blue{color:#4682b4}
+.submitStick{
+  position:fixed;
+   right:40px;
+  top:70px;
+}
+.cont{
+  position:relative;
+  top:80px;
+}
+.fix{
+position:fixed;
+  z-index:1;
+  bottom:0;
+  
+  width:100%;
+    background-color:	#0b0e0f;
+  color:#f6f6f7;
+  opacity:0.9;
+  border:none;
+}
+.fix body{ color: red;}

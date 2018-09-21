@@ -1,0 +1,76 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer charset="UTF-8"></script>
+  </head>
+  <body>
+    
+    <header>
+      <div class="top_menu">Menu</div>
+    </header>
+
+    <main>
+     
+     <ul class="top_menu">
+  <li><a><form><input name="dream" class="b_inl" type="text" maxlength="50" placeholder="Поиск" >  
+    <button type="button" class="b_inl" name ="but2" onclick="getFocus()">Найти</button></form></a></li>
+  <li><a href="#news">News</a></li>
+  <li><a>
+    <button type="button" class="b_inl" name ="but3" onclick="change()">Поменять фон</button></a></li>
+  <li><a>
+    <button type="button" class="b_inl" name ="but" onclick="loadSome()">Загрузить данные</button>
+        </a></li>
+         <li><a>
+    <button type="button" class="b_inl" name ="but4" onclick="loadSome2()">Загрузить данные2</button>
+        </a></li>
+        <li><a id="console">
+    
+        </a></li>
+  <li><a>
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script></a></li>
+</ul>
+    
+   
+        <div class="cont">
+       
+      </div>
+      <div id="output">data</div>
+      <div id="text_out"></div>
+     
+        
+     
+      <div id="pi"></div>
+    
+    </main>
+
+    <footer>
+       <iframe name="frame" width="100%" height="30" class="fix"></iframe>
+      Made with <a href="https://glitch.com">Glitch</a>!
+    </footer>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+
+  </body>
+</html>
