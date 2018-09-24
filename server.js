@@ -149,8 +149,8 @@ fs.readdir("./events/", (err, files) => {
 
 client.on("ready", () => {
   console.log("I am ready!");
-let messageReactionAdd = require('./events/messageReactionAdd.js');
-messageReactionAdd.onready(client);
+//let messageReactionAdd = require('./events/messageReactionAdd.js');
+//messageReactionAdd.onready(client);
 });
 
 client.on("message", (message) => {
