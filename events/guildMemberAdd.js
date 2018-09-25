@@ -204,7 +204,7 @@ try{
    let xrnd = Math.ceil(Math.random() * secret_arr.length-1);
   let desc=secret_arr[xrnd][0];
   let emo=secret_arr[xrnd][1];
-  let str_chek=member+' Для доступа к серверу нажмите на '+desc+' под этим сообщением.\nУспейте нажать в течение 10 минут.';
+  let str_chek=member+' Для доступа ко всем каналам нажмите на '+desc+' под этим сообщением.\nУспейте нажать в течение 10 минут.';
   let check_msg=await channel.send(str_chek);
   for(let i=0;i<secret_arr.length;i++){ check_msg.react(secret_arr[i][1]);};     
   let filter=(reaction,user)=>(user.id==member.user.id);

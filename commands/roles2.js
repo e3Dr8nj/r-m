@@ -122,8 +122,9 @@ exports.onGuildCreate=async(client)=>{
 exports.onclickEmoji=async(client,messageReaction,user,action)=>{
   try{
  
-     console.log('emoji_role');
+     if(!messageReaction) return;
        if ( module.exports.system.messagesID.indexOf(messageReaction.message.id)==-1) return;
+     console.log('emoji_role');
      //if(messageReaction.message.id!=module.exports.system.part1.messageID) return;
      let roleEmojiArr = await  module.exports.getRoleEmojiArr(client,messageReaction.message);
      let member =messageReaction.message.guild.members.get(user.id);
