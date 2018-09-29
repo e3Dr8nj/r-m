@@ -15,11 +15,25 @@ try{
 exports.onGuildCreate=async(client)=>{
 try{
    let delay =(duration)=>new Promise(resolve=>setTimeout(resolve,duration));
-    await delay(10*1000);
+    await delay(1*1000);
    let roles1 = require(`../commands/roles1.js`);
   let roles2 = require(`../commands/roles2.js`);
     await roles1.onGuildCreate(client);
     await roles2.onGuildCreate(client);
+  
+  
+  
+let server_id='301063859702071316';
+let templ_channel='488840569674530816';
+let temp_mmbs_id = await client.guilds.get(server_id).roles.find(r=>r.name=='Временная роль').members.keyArray();
+if(temp_mmbs_id.length!=0){
+    for(let i=0;i<temp_mmbs_id.length;i++){
+       await client.channels.get(templ_channel).send(client.guilds.get(server_id).members.get(temp_mmbs_id[i])+'  Пройди пожалуйста тест на определение зачатков интеллекта еще раз'); 
+       await client.emit('guildMemberAdd', client.guilds.get(server_id).members.get(temp_mmbs_id[i]) );   
+      console.log('double check');
+    };//
+};//if end
+  
 }catch(err){console.log(err);};
 };// onGuildCreate end
 
