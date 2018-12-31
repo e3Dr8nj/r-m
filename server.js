@@ -153,16 +153,26 @@ client.on("ready", () => {
 //messageReactionAdd.onready(client);
 });
 
-client.on("message", (message) => {
- 
+client.on("message", async(message) => {
+  if(message.content.startsWith('+')){ console.log('comic');
+    let number = parseInt(message.content.slice(1)); console.log(number);
+     if(!number) return;                                 
+    let channel = message.channel;
+    await message.delete();
+    let msg_sept=await channel.send('@Septapus comic '+number);
+    //message.delete();
+    msg_sept.delete();
+    return;
+  };//if startsWith =
   if ( message.content.startsWith(config.prefix)||(message.mentions.members.first()!=undefined && message.mentions.members.first().user.id==client.user.id)  ){
     
-
+ 
     
     let args=[];
   if( message.content.startsWith(config.prefix) ){
        args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-       
+    
+ 
    }else if (message.mentions.members.first().user.id==client.user.id)  {
       
         

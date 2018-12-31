@@ -177,7 +177,7 @@ exports.phrase=[
 ];
 
 exports.run = (client, message,args) => {
-        try{
+        try{ return;
       let member = message.member;
       let CHANNEL_ID=module.exports.system.CHANNEL_ID;
       let channel = message.channel;

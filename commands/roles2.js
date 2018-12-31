@@ -12,7 +12,8 @@ exports.system={
    
 };
 
-exports.digit={"0⃣":'0',"1⃣":'1' ,"2⃣":'2',"3⃣":'3',"4⃣":'4',"5⃣":'5',"6⃣":'6',"7⃣":'7',"8⃣":'8',"9⃣":'9',"🇦":'10',"🇧":'11',"🇨":'12',"🇩":'13',"🇪":'14',"🇫":'15',"🇬":'16',"🇭":'17',"🇮":'18',"🇯":'19'};
+exports.digit={"0⃣":'0',"1⃣":'1' ,"2⃣":'2',"3⃣":'3',"4⃣":'4',"5⃣":'5',"6⃣":'6',"7⃣":'7',"8⃣":'8',"9⃣":'9',"🇹":'10',"🇱":'11',"🇪":'12',"🇳":'13' ,"🇪":'14',"🇫":'15',"🇬":'16',"🇭":'17',"🇮":'18',"🇯":'19'};
+
 exports.run=async(client,message,args)=>{
    try{
     
@@ -154,9 +155,25 @@ exports.onclickEmoji=async(client,messageReaction,user,action)=>{
    }catch(err){console.log(err);};
 };//onclickEmoji end
 
-
+/*
 exports.autoreload=async(client,message,args)=>{
 
+  try{
+   if(module.exports.system.messagesID.length==0) return;
+   for(let i = 0 ;i<module.exports.system.messagesID.length;i++){
+     let channel = client.channels.get(module.exports.system.channelID);
+
+    args=[module.exports.system.main_command_name,'reset',i,module.exports.system.messagesID[i]];
+    await module.exports.reset(client,message,args);
+     
+     };//for end
+  }catch(err){console.log(err);};    
+
+};//autoreload end
+
+*/
+exports.autoreload=async(client,message,args)=>{
+if(args[2]&&!isNaN(args[2])){module.exports.system.step =Number(args[2])};
   try{
    if(module.exports.system.messagesID.length==0) return;
    for(let i = 0 ;i<module.exports.system.messagesID.length;i++){
@@ -171,7 +188,7 @@ exports.autoreload=async(client,message,args)=>{
     await module.exports.reset(client,message,args);
      
      };//for end
+    module.exports.system.step =10;
   }catch(err){console.log(err);};    
 
 };//autoreload end
-
