@@ -16,9 +16,9 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
 const config = {};
-config.prefix=".";
+config.prefix="^";
 client.lang=1;
-client.prefix=".";
+client.prefix="^";
 
 
 
@@ -137,15 +137,7 @@ await fs.writeFile('./public/triggers.xml', str_xml, function (err) {
 
 
 //-------------------DISCORD
-fs.readdir("./events/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach(file => {
-    let eventFunction = require(`./events/${file}`);
-    let eventName = file.split(".")[0];
-    
-    client.on(eventName, (...args) => eventFunction.run(client, ...args));
-  });
-});//event trigger
+
 
 client.on("ready", () => {
   console.log("I am ready!");
@@ -194,7 +186,7 @@ client.on("message", async(message) => {
     for( var key in keyWords){if(keyWords[key][client.lang]==args[0].toLowerCase()){ alias=key; break;}};
 
     let commandFile = require(`./commands/${alias}.js`);
-    commandFile.run(client, message,args);
+    if(commandFile.run) try{commandFile.run(client, message,args);}catch(err){console.log(err);};
   } catch (err) {
     console.error(err);
   }//try end
